@@ -1,0 +1,54 @@
+﻿@page
+@model LiveShop.Pages.CartModel
+@{
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+    <h3>Cart Info</h3>
+    @if (Model.MyCart != null)
+    {
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Sub Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.MyCart)
+                {
+                    <tr>
+                        <td><a asp-page="cart" asp-page-handler="delete" asp-route-id="@item.Car.ID">Remove</a></td>
+                        <td>@item.Car.ID</td>
+                        <td>@item.Car.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Car.Price</td>
+                        <td>@(item.Car.Price * item.Quantity)</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="5" align="right">Total</td>
+                    <td>@Model.Total</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h1>There is no item in shopping cart</h1>
+    }
+
+    <br />
+    <a asp-page="cart" asp-page-handler="confirm" id="Buy" class="btn btn-primary">Buy</a>
+    <a asp-page="/Index">Continue shopping</a>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@page
+@model StoreManagement.Pages.Shop.DasboardModel
+@{
+}
+
+<h1>Shop</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4>Products</h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-hover" id="tblProduct">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Unit In Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4>Products</h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="canvasProducts" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4>Employees</h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-hover" id="tblEmployee">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Title</th>
+                                <th>Birth Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4>Employees</h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="canvasEmployees" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.umd.js"></script>
+}

@@ -1,0 +1,68 @@
+﻿<Window x:Class="ReadWriteFromTxtCsvFile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReadWriteFromTxtCsvFile"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid Name="Dgv" Margin="10,150,157,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="LastName" Binding="{Binding LastName}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding FirstName}" Width="auto"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Click="LoadData_Click" 
+                x:Name="BtnLoad" 
+                Content="LoadData" 
+                HorizontalAlignment="Left" 
+                Margin="10,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+        <Button Click="WriteToFile_Click" 
+                x:Name="BtnWrite" 
+                Content="Save" 
+                HorizontalAlignment="Left" 
+                Margin="124,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+        <TextBox HorizontalAlignment="Left" 
+                 x:Name="txtToWrite"
+                 Margin="10,68,0,0" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 Width="410" Height="30"/>
+        <Button Click="AddSerializedObject_Click" 
+                x:Name="BtnSaveSerialized" 
+                Content="Save XML" 
+                HorizontalAlignment="Left" 
+                Margin="244,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+        <Button Click="ReadSerializedObject_Click" 
+                x:Name="BtnReadSerialized" 
+                Content="Read XML" 
+                HorizontalAlignment="Center" 
+                Margin="0,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+        <Button Click="BtnSaveJson_Click" 
+                x:Name="BtnSaveJson" 
+                Content="Save Json" 
+                HorizontalAlignment="Left" 
+                Margin="472,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+        <Button Click="BtnReadJson_Click" 
+                x:Name="BtnReadJson" 
+                Content="Read Json" 
+                HorizontalAlignment="Left" 
+                Margin="578,10,0,0" 
+                VerticalAlignment="Top" 
+                Height="32" Width="82"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿@page
+@model PRN221_Lab2.Pages.Shop.CartModel
+@using PRN221_Lab2.DataAcces;
+@using PRN221_Lab2.Helper
+@{
+    var cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart</title>
+</head>
+<body>
+    <h3>Cart Info</h3>
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.MyCart)
+            {
+                <tr>
+                    <td><a asp-page="cart" asp-page-handler="delete" asp-route-id="@item.Product.ProductId">Remove</a></td>
+                    <td>@item.Product.ProductId</td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Product.UnitPrice</td>
+                    <td>@(item.Product.UnitPrice * item.Quantity)</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="5" align="right">Total</td>
+                <td>@Model.Total</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <a asp-page="cart" asp-page-handler="confirm" id="Buy" class="btn btn-primary">Buy</a>
+    <a asp-page="/Shop/ProductsList">Continue shopping</a>
+</body>
+</html>
+
+@section Scripts{
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/productHub").build();
+        connection.start().catch(function (err) {
+            return console.error(err.ToString());
+        });
+        document.getElementById("Buy").addEventListener("click", function(event){
+            connection.invoke("Buy").catch(function(err){
+                return console.error(err.toString());
+            })
+        });
+    </script>
+}

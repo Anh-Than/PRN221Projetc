@@ -1,0 +1,95 @@
+﻿@page
+@using PRN221_Lab2.DataAcces;
+@model PRN221_Lab2.Pages.Shop.ProductsListModel
+@{
+    Pager pager = new Pager();
+    int pageNo = 0;
+
+    if (ViewData["Pager"] != null)
+    {
+        pager = (Pager)ViewData["Pager"];
+        pageNo = pager.CurrentPage;
+    }
+}
+<div class="text-center">
+    <h1>Products</h1>
+</div>
+<form method="get">
+    <div class="input-group">
+        Search by name:<input class="form-control" asp-for="SearchTerm"/>
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>
+                <a asp-page="/Shop/ProductsList" 
+                asp-route-sortOrder="@Model.CurrentSort" 
+                asp-route-searchTerm="@Model.SearchTerm">Amount</a>
+            </th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.data)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.UnitsInStock</td>
+                <td>@product.UnitPrice</td>
+                @if (ViewData["username"].Equals("admin"))
+                {
+                    <td>
+                        <a asp-page="/Shop/ProductDetails" asp-route-ID="@product.ProductId" class="btn btn-primary m-1">View</a>
+                        <a asp-page="/Shop/ProductsEdit" asp-route-ID="@product.ProductId" class="btn btn-primary m-1">Edit</a>
+                        <a asp-page="#" class="btn btn-danger m-1">Delete</a>
+                    </td>
+                }
+                else
+                {
+                    <td><a asp-page="cart" asp-page-handler="buy" asp-route-id="@product.ProductId">Add to cart</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+            @if (pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-route-pg="1">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" asp-route-pg="@(pager.CurrentPage -1)">Previous</a>
+                </li>
+            }
+
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-route-pg="@pge"> @pge</a>
+                </li>
+            }
+
+            @if (pager.CurrentPage < pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-route-pg="@(pager.CurrentPage +1)">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" asp-route-pg="@(pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
