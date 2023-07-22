@@ -4,9 +4,10 @@ namespace StoreManagement.Repository
 {
     public class EmployeeRepository
     {
-        NorthwindContext _context = new NorthwindContext();
+        
         public List<EmployeeView> GetEmployeesList()
         {
+            NorthwindContext _context = new NorthwindContext();
             List<Employee> employees = new List<Employee>();
             List<EmployeeView> employeeList = new List<EmployeeView>();
             employees = _context.Employees.ToList();
@@ -29,6 +30,7 @@ namespace StoreManagement.Repository
 
         public List<EmployeeForGraph> GetEmployeesForGraph()
         {
+            NorthwindContext _context = new NorthwindContext();
             List<EmployeeForGraph> employeesForGraph = new List<EmployeeForGraph>();
             List<EmployeeView> emps = new List<EmployeeView>();
             emps = GetEmployeesList();

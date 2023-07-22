@@ -127,6 +127,7 @@ namespace StoreManagement
             }
 
             app.UseProductTableDependency();
+            app.UseEmployeeTableDependency();
 
             app.Run();
         }

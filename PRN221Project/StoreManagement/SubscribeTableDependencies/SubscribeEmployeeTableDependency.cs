@@ -16,7 +16,7 @@ namespace StoreManagement.SubscribeTableDependencies
         }
         public void SubscribeTableDependency()
         {
-            string connectionString = "Data Source=JUSTTVA;Initial Catalog=Northwind;Integrated Security=True";
+            string connectionString = "server=JUSTTVA;uid=justtva2511;pwd=12345;database=Northwind";
             tableDependency = new SqlTableDependency<Employee>(connectionString, "Employees");
             tableDependency.OnChanged += TableDependency_OnChanged;
             tableDependency.OnError += TableDependency_OnError;
