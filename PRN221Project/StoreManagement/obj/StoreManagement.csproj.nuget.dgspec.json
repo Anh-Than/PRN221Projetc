@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AnhTV\\source\\repos\\PRN221Project\\StoreManagement\\StoreManagement.csproj": {}
+    "C:\\1.Work\\2. PRN221\\PRN221Projetc\\PRN221Project\\StoreManagement\\StoreManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AnhTV\\source\\repos\\PRN221Project\\StoreManagement\\StoreManagement.csproj": {
+    "C:\\1.Work\\2. PRN221\\PRN221Projetc\\PRN221Project\\StoreManagement\\StoreManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AnhTV\\source\\repos\\PRN221Project\\StoreManagement\\StoreManagement.csproj",
+        "projectUniqueName": "C:\\1.Work\\2. PRN221\\PRN221Projetc\\PRN221Project\\StoreManagement\\StoreManagement.csproj",
         "projectName": "StoreManagement",
-        "projectPath": "C:\\Users\\AnhTV\\source\\repos\\PRN221Project\\StoreManagement\\StoreManagement.csproj",
-        "packagesPath": "C:\\Users\\AnhTV\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AnhTV\\source\\repos\\PRN221Project\\StoreManagement\\obj\\",
+        "projectPath": "C:\\1.Work\\2. PRN221\\PRN221Projetc\\PRN221Project\\StoreManagement\\StoreManagement.csproj",
+        "packagesPath": "C:\\Users\\Bi\\.nuget\\packages\\",
+        "outputPath": "C:\\1.Work\\2. PRN221\\PRN221Projetc\\PRN221Project\\StoreManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AnhTV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
