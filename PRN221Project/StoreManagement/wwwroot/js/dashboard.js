@@ -143,7 +143,7 @@ function BindEmployeesToGraph(empsForGraph) {
 function DestroyCanvasIfExists(canvasId) {
     let chartStatus = Chart.getChart(canvasId);
     if (chartStatus != undefined) {
-        console.log("here");
+        console.log("here here");
         chartStatus.destroy();
     }
 }
