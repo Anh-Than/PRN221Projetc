@@ -22,7 +22,8 @@ namespace StoreManagement
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Northwind")));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddSignalR(e => {
+            builder.Services.AddSignalR(e =>
+            {
                 e.MaximumReceiveMessageSize = 102400000;
             });
             //DI
@@ -30,7 +31,8 @@ namespace StoreManagement
             builder.Services.AddSingleton<SubscribeProductTableDependency>();
             builder.Services.AddSingleton<SubscribeEmployeeTableDependency>();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            builder.Services.AddDefaultIdentity<IdentityUser>()
+                .AddDefaultTokenProviders()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddRazorPages();
@@ -97,7 +99,7 @@ namespace StoreManagement
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                var roles = new[] { "Admin", "Manager", "User" };
+                var roles = new[] { "Admin" };
 
                 foreach (var role in roles)
                 {

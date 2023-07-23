@@ -1,0 +1,44 @@
+﻿@page
+@using StoreManagement.DataAcces;
+@model StoreManagement.Pages.Employees.EmployeeListModel
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a asp-page="/Employees/EmployeeList" asp-page-handler="add" class="btn btn-outline-primary">Add employee</a>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Title</th>
+                <th scope="col">Birth Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(EmployeeView e in Model.employees)
+            {
+                <tr>
+                    <th scope="row">@e.EmployeeId</th>
+                    <td>@e.LastName</td>
+                    <td>@e.FirstName</td>
+                    <td>@e.Title</td>
+                    <td>@e.BirthDate</td>
+                    <td>
+                        <a href="/Employees/EmployeeEdit/@e.EmployeeId" class="btn btn-dark">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Employees/EmployeeDelete/@e.EmployeeId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }            
+        </tbody>
+    </table>
+</div>

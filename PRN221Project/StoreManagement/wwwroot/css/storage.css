@@ -1,0 +1,85 @@
+﻿body {
+}
+
+.price-input {
+    display: flex;
+    width: 100%;
+    margin: 15px 0 20px;
+}
+
+    .price-input .field {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 30px;
+    }
+
+.field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 12px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    -moz-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: textfield;
+}
+
+.price-input .separator {
+    width: 130px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    position: relative;
+}
+
+.slider .progress{
+    height: 5px;
+    left:0%;
+    right:0%;
+    position: absolute;
+    border-radius: 5px;
+    background: #17A28B;
+}
+
+.range-input{
+    position:relative;
+}
+
+.range-input input{
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    background: #17A2B8;
+    pointer-events: auto;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

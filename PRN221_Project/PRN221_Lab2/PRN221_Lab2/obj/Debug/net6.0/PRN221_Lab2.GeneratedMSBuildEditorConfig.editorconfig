@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PRN221_Lab2
 build_property.RootNamespace = PRN221_Lab2
-build_property.ProjectDir = C:\Users\AnhTV\source\repos\PRN221_Project\PRN221_Lab2\PRN221_Lab2\
+build_property.ProjectDir = C:\1.Work\2. PRN221\PRN221Projetc\PRN221_Project\PRN221_Lab2\PRN221_Lab2\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\AnhTV\source\repos\PRN221_Project\PRN221_Lab2\PRN221_Lab2
+build_property.MSBuildProjectDirectory = C:\1.Work\2. PRN221\PRN221Projetc\PRN221_Project\PRN221_Lab2\PRN221_Lab2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Create.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Delete.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Details.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Edit.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Error.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Login.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Privacy.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/Cart.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductDetails.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFxQcm9kdWN0RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductList.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFxQcm9kdWN0TGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductsEdit.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductsEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFxQcm9kdWN0c0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductsList.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shop/ProductsList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcFxQcm9kdWN0c0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/_ViewImports.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/_ViewStart.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AnhTV/source/repos/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shared/_Layout.cshtml]
+[C:/1.Work/2. PRN221/PRN221Projetc/PRN221_Project/PRN221_Lab2/PRN221_Lab2/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nsrmfiebga

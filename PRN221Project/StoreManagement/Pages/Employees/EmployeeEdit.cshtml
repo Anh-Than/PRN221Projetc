@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model StoreManagement.Pages.Employees.EmployeeEditModel
+@{
+}
+
+<div class="container">
+    <h1>Edit an Employee</h1>
+    <form method="post">
+        <input type="hidden" asp-for="EditEmployeeView.Id" />
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" asp-for="EditEmployeeView.LastName" name="lastName" placeholder="Enter last name">
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" asp-for="EditEmployeeView.FirstName" name="firstName" placeholder="Enter first name">
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <select class="form-select mb-4 mt-2" asp-for="EditEmployeeView.Title" name="title" aria-label="Category">
+                <option value="0">--Not selected--</option>
+                @foreach (string t in Model.Titles)
+                {
+                    <option value="@t">@t</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Date of birth</label>
+            <input type="date" asp-for="EditEmployeeView.Dob" name="dob" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

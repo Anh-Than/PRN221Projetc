@@ -1,0 +1,242 @@
+﻿@page
+@using StoreManagement.DataAcces;
+@using StoreManagement.ViewModel;
+@model StoreManagement.Pages.Shop.StorageModel
+@{
+    Pager pager = new Pager();
+    int pageNo = 0;
+
+    if (ViewData["Pager"] != null)
+    {
+        pager = (Pager)ViewData["Pager"];
+        pageNo = pager.CurrentPage;
+    }
+}
+@section css{
+    <link href="~/css/storage.css" rel="stylesheet" />
+}
+<h1>Storage</h1>
+<form method="get" class="form-inline mb-4">
+    <div class="row">
+        <div class="col-3">
+            <select class="form-select mb-4 mt-2" asp-for="categoryId" name="category" aria-label="Category">
+                <option value="0">Category</option>
+                @foreach (Category c in Model.Categories)
+                {
+                    <option value="@c.CategoryId">@c.CategoryName</option>
+                }
+            </select>
+            <select class="form-select" name="supplier" asp-for="supplierId" aria-label="Supplier">
+                <option value="0">Supplier</option>
+                @foreach (Supplier s in Model.Suppliers)
+                {
+                    <option value="@s.SupplierId">@s.CompanyName</option>
+                }
+            </select>
+        </div>
+        <div class="col-7">
+            <div class="form-group">
+                <input class="form-control" asp-for="SearchTerm" />
+            </div>
+            <div class="wrapper">
+                <div class="price-input">
+                    <div class="field">
+                        <span>Min</span>
+                        <input type="number" step="0.01" class="input-min" asp-for="searchMinPrice" value="@Model.searchMinPrice.ToString("0.00")" style="" />
+                    </div>
+                    <div class="separator" style="">-</div>
+                    <div class="field">
+                        <span>Max</span>
+                        <input type="number" step="0.01" class="input-max" asp-for="searchMaxPrice" value="@Model.searchMaxPrice.ToString("0.00")" />
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="progress" style="left:@((Model.searchMinPrice/Model.maxPrice)*100)%; right:@(100 -(Model.searchMaxPrice/Model.maxPrice)*100)%;">
+                    </div>
+                    <div class="range-input" style="position:relative">
+                        <input type="range" class="range-min" min="@Model.minPrice" max="@Model.maxPrice" value="@Model.searchMinPrice" step="0.01" />
+                        <input type="range" class="range-max" min="@Model.minPrice" max="@Model.maxPrice" value="@Model.searchMaxPrice" step="0.01" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 search-button">
+            <button type="submit" class="btn btn-primary btn-lg submit-button">Search</button>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col">
+        <a asp-page="/Shop/Storage" asp-page-handler="add" class="btn btn-outline-primary">Add product</a>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Supplier</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th>
+                    <a asp-page="/Shop/Storage"
+                       asp-route-sortOrder="@Model.CurrentSort"
+                       asp-route-isSort="true"
+                       asp-route-searchTerm="@Model.SearchTerm"
+                       asp-route-supplier="@Model.supplierId"
+                       asp-route-category="@Model.categoryId"
+                       asp-route-searchMinPrice="@Model.searchMinPrice"
+                       asp-route-searchMaxPrice="@Model.searchMaxPrice"
+                       asp-route-pg="@pager.CurrentPage">In Stock</a>
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductView p in Model.data)
+            {
+                <tr>
+                    <th>@p.Id</th>
+                    <td>@p.Name</td>
+                    <td>@p.Supplier</td>
+                    <td>@p.Category</td>
+                    <td>@p.Price</td>
+                    @if (@p.UnitInStock == 0)
+                    {
+                        <td style="color:red;">@p.UnitInStock</td>
+                    }
+                    else
+                    {
+                        <td>@p.UnitInStock</td>
+                    }
+                    <td>
+                        <a href="/Products/EditProduct/@p.Id" class="btn btn-dark">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Products/DeleteProduct/@p.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+            @if (pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+               asp-route-sortOrder="@Model.CurrentSort"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-supplier="@Model.supplierId"
+               asp-route-category="@Model.categoryId"
+               asp-route-searchMinPrice="@Model.searchMinPrice"
+               asp-route-searchMaxPrice="@Model.searchMaxPrice" asp-route-pg="1">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+               asp-route-sortOrder="@Model.CurrentSort"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-supplier="@Model.supplierId"
+               asp-route-category="@Model.categoryId"
+               asp-route-searchMinPrice="@Model.searchMinPrice"
+               asp-route-searchMaxPrice="@Model.searchMaxPrice" asp-route-pg="@(pager.CurrentPage -1)">Previous</a>
+                </li>
+            }
+
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link"
+               asp-route-sortOrder="@Model.CurrentSort"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-supplier="@Model.supplierId"
+               asp-route-category="@Model.categoryId"
+               asp-route-searchMinPrice="@Model.searchMinPrice"
+               asp-route-searchMaxPrice="@Model.searchMaxPrice" asp-route-pg="@pge"> @pge</a>
+                </li>
+            }
+
+            @if (pager.CurrentPage < pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link"
+               asp-route-sortOrder="@Model.CurrentSort"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-supplier="@Model.supplierId"
+               asp-route-category="@Model.categoryId"
+               asp-route-searchMinPrice="@Model.searchMinPrice"
+               asp-route-searchMaxPrice="@Model.searchMaxPrice" asp-route-pg="@(pager.CurrentPage +1)">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+               asp-route-sortOrder="@Model.CurrentSort"
+               asp-route-searchTerm="@Model.SearchTerm"
+               asp-route-supplier="@Model.supplierId"
+               asp-route-category="@Model.categoryId"
+               asp-route-searchMinPrice="@Model.searchMinPrice"
+               asp-route-searchMaxPrice="@Model.searchMaxPrice" asp-route-pg="@(pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+@section Scripts{
+    <script>
+        const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+        const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))
+
+        rangeInput = document.querySelectorAll(".range-input input");
+        priceInput = document.querySelectorAll(".price-input input");
+        progress = document.querySelector(".slider .progress");
+        searchButton = document.querySelector(".submit-button");
+        const topValue = rangeInput[0].getAttribute("max");
+
+        let pricegap = 0.1;
+
+        priceInput.forEach(input => {
+            input.addEventListener("input", e => {
+                let minVal = parseFloat(priceInput[0].value),
+                    maxVal = parseFloat(priceInput[1].value);
+
+                if ((maxVal - minVal >= pricegap) && maxVal <= parseFloat(topValue)) {
+                    if (e.target.className === "input-min") {
+                        rangeInput[0].value = minVal;
+                        progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    } else {
+                        rangeInput[1].value = maxVal;
+                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    }
+                }
+            });
+        });
+
+        rangeInput.forEach(input => {
+            input.addEventListener("input", e => {
+                let minVal = parseFloat(rangeInput[0].value),
+                    maxVal = parseFloat(rangeInput[1].value);
+
+                if (maxVal - minVal < pricegap) {
+                    if (e.target.className === "range-min") {
+                        rangeInput[0].value = maxVal - pricegap;
+                    } else {
+                        rangeInput[1].value = minVal + pricegap;
+                    }
+                } else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
+
+
+            });
+        });
+    </script>
+
+}
