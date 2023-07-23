@@ -97,7 +97,7 @@ namespace StoreManagement.Pages.Shop
 
         public IActionResult OnGetAdd()
         {
-            return RedirectToPage("/Products/AddEmployee");
+            return RedirectToPage("/Products/AddProduct");
         }
 
         public IEnumerable<ProductView> Search(int category, 
